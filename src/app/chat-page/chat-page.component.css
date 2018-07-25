@@ -8,7 +8,7 @@
 }
 
 #MessagesScroll::-webkit-scrollbar-thumb {
-  background: #19ac4b;
+  background: lightslategray;
   border-radius: 10px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 #UsersScroll::-webkit-scrollbar-thumb {
-  background: #19ac4b;
+  background: lightslategray;
   border-radius: 10px;
 }
 .avatarHover:hover{

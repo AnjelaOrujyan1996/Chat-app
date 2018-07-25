@@ -34,7 +34,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-12 userlist" style="overflow-y: scroll; height: 500px;" #UsersScroll>
+      <div class="col-12 userlist" style="overflow-y: scroll; height: 500px" id="UsersScroll" #UsersScroll>
         <ul style="padding: 0 !important;">
           <li *ngFor="let user of Users;let ind = index" style="list-style: none">
             <button *ngIf="user._id!==User[0]._id;else non" class="col-md-12 btn"
@@ -77,9 +77,7 @@
     </div>
     <div class="col-8 p-4">
       <div class="container bg-light p-0" style="height: 580px;border-radius: 8px">
-        <ul style="overflow-y: scroll; height: 580px; " class="col-12" id="UserL" #MessagesScroll
-
-            scroll-directive>
+        <ul style="overflow-y: scroll; height: 580px; " class="col-12" id="MessagesScroll" #MessagesScroll scroll-directive>
           <img src="../../assets/img/loading.gif" alt="" width="50" height="50" class="loading" id="loading">
 
           <li class="col-12 p-0 m-0" style="list-style: none" *ngFor="let item of Message">
