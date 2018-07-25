@@ -119,7 +119,6 @@ export class ChatPageComponent implements OnInit, AfterViewInit {
   }
 
   logOut() {
-    console.log("1111111111111111111111111");
    //document.getElementById(this.User[0]._id).style.border = 'red'
     this.newService.userDisconected({userId: this.User[0]._id})
     console.log("222222222222222222222222222222")
