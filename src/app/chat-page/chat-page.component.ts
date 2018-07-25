@@ -11,7 +11,7 @@ import {DOCUMENT} from '@angular/common';
 })
 export class ChatPageComponent implements OnInit, AfterViewInit {
   @Inject(DOCUMENT) document;
-  @ViewChild('UserL') UserL: ElementRef;
+  @ViewChild('MessagesScroll') MessagesScroll: ElementRef;
   bool = true;
   Users;
   User = [];
@@ -63,7 +63,7 @@ export class ChatPageComponent implements OnInit, AfterViewInit {
       this.newService.userConnected({userId: this.User[0]._id});
       console.log(this.Message.length)
       setTimeout(() => {
-        this.UserL.nativeElement.scrollTop = this.UserL.nativeElement.scrollHeight
+        this.MessagesScroll.nativeElement.scrollTop = this.MessagesScroll.nativeElement.scrollHeight
       }, 100)
 
     }, error => {
@@ -132,7 +132,7 @@ export class ChatPageComponent implements OnInit, AfterViewInit {
     if (this.message === "") return;
     this.newService.sendMessage({message: this.message, user: this.User[0]._id, avatar: this.User[0].avatar});
     setTimeout(() => {
-      this.UserL.nativeElement.scrollTop = this.UserL.nativeElement.scrollHeight
+      this.MessagesScroll.nativeElement.scrollTop = this.MessagesScroll.nativeElement.scrollHeight
     }, 100)
     this.message = "";
   }
@@ -146,7 +146,7 @@ export class ChatPageComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.UserL.nativeElement.scrollTop = this.UserL.nativeElement.scrollHeight
+      this.MessagesScroll.nativeElement.scrollTop = this.MessagesScroll.nativeElement.scrollHeight
     }, 100)
   }
 
