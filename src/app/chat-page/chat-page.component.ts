@@ -74,7 +74,11 @@ export class ChatPageComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
+  search(event) {
+    this.newService.searchUser(event.target.value).subscribe((data) => {
+      this.Users = data['users'];
+    });
+  }
   onSave(event) {
 
     console.log(event);

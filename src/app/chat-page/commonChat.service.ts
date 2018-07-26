@@ -63,11 +63,10 @@ export class CommonChatService {
   scrolling(){
     return this.http.get('http://localhost:3000/loadNextMessages')
   }
-  // destroy(userId){
-  //   let observable = new Observable(observer => {
-  //     observer.next(this.http.post('http://localhost:3000/destroy', async(false), userId));
-  //   });
-  //   return observable
-  // }
+
+  searchUser(searchUser){
+    return this.http.post('http://localhost:3000/searchUser', {"name":searchUser}, {headers: this.h})
+  }
+
 
 }

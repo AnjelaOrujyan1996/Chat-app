@@ -535,6 +535,16 @@ app.post("/changeAvatar", checkAuth, (req, res) => {
   })
 })
 
+app.post("/searchUser", checkAuth, (req, res)=>{
+  Users.find({active: true, fullname:{ '$regex' : req.body.name, '$options' : 'i' }})
+    .exec()
+    .then(users=>{
+      res.status(200).json({
+        users:users
+      })
+    })
+})
+
 server.listen(8000, function () {
   console.log("socket run!!!")
 })
